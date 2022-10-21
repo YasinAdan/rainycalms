@@ -1,0 +1,54 @@
+@use "Utilities";
+@use "Nav";
+@use "Quotes";
+
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0);
+}
+
+video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: brightness(70%);
+}
+
+.audio-btn {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  background: transparent;
+  border-style: none;
+  padding: 1rem;
+  animation: border 5s infinite alternate;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@keyframes border {
+  0% {
+    border-bottom: 3px solid #2e3539;
+  }
+  20% {
+    border-bottom: 3px solid #6f7077;
+  }
+  40% {
+    border-bottom: 3px solid #f4dbf7;
+  }
+  60% {
+    border-bottom: 3px solid #e07580;
+  }
+  100% {
+    border-bottom: 3px solid #1f2122;
+  }
+}

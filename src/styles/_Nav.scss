@@ -1,0 +1,58 @@
+nav {
+  width: 100%;
+  height: 8vh;
+  position: absolute;
+  overflow: hidden;
+  animation: border 30s infinite alternate;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    li {
+      padding: 0 2rem;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+    }
+
+    .contact-btn {
+      position: relative;
+      top: 0;
+      transition: top ease 0.5s;
+      border: 1px solid #36454f;
+      border-radius: 0.5rem;
+      background-color: transparent;
+      height: 2.5rem;
+      width: 10em;
+      color: white;
+      box-shadow: 0 6px 6px #36454f;
+      &:hover {
+        cursor: pointer;
+        background-color: #36454f;
+        transition: background-color 1s ease;
+        top: -2.5px;
+      }
+    }
+  }
+}
+
+@keyframes border {
+  0% {
+    border-bottom: 3px solid #2e3539;
+  }
+  20% {
+    border-bottom: 3px solid #6f7077;
+  }
+  40% {
+    border-bottom: 3px solid #f4dbf7;
+  }
+  60% {
+    border-bottom: 3px solid #e07580;
+  }
+  100% {
+    border-bottom: 3px solid #1f2122;
+  }
+}

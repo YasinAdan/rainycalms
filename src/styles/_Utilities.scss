@@ -1,0 +1,19 @@
+@mixin colorLine($color, $color2, $color3, $color4, $color5) {
+  @keyframes border {
+    0% {
+      border-bottom: 1.5px solid #{$color};
+    }
+    20% {
+      border-bottom: 1.5px solid #{$color2};
+    }
+    40% {
+      border-bottom: 1.5px solid #{$color3};
+    }
+    60% {
+      border-bottom: 1.5px solid #{$color4};
+    }
+    100% {
+      border-bottom: 1.5px solid #{$color5};
+    }
+  }
+}
