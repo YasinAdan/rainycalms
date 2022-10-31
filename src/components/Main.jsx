@@ -9,11 +9,21 @@ import Quotes from "./Quotes";
 
 const Main = () => {
   const [playing, setPlaying] = useState(true);
+  const [volume, setVolume] = useState(0.15);
+
   const audioRef = useRef();
+  const volRef = useRef();
 
   const playHander = () => {
+    audioRef.current.volume = volume;
     playing ? audioRef.current.play() : audioRef.current.pause();
     setPlaying(!playing);
+  };
+
+  const volumeHandler = () => {
+    setVolume(volRef.current.value);
+    audioRef.current.volume = volRef.current.value;
+    console.log(volume / 100);
   };
 
   return (
@@ -26,8 +36,25 @@ const Main = () => {
         <FontAwesomeIcon
           icon={playing ? faCirclePlay : faCirclePause}
           size="6x"
+          className="audio-border"
         />
       </button>
+
+      <div class="slider-container">
+        <span class="bar">
+          <span class="fill"></span>
+        </span>
+        <input
+          type="range"
+          className="slider"
+          ref={volRef}
+          min={0.0}
+          max={1}
+          step={0.01}
+          value={volume}
+          onChange={volumeHandler}
+        />
+      </div>
       <Quotes />
     </div>
   );

@@ -1,12 +1,16 @@
 @use "Utilities";
 @use "Nav";
 @use "Quotes";
+@use "Waves";
+@use "Slider";
 
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   background-color: rgb(0, 0, 0);
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 video {
@@ -24,31 +28,22 @@ video {
 
 .audio-btn {
   position: absolute;
-  left: 50%;
-  top: 45%;
+  top: 40%;
+  right: 50%;
+  transform: translate(50%, -50%);
   background: transparent;
   border-style: none;
   padding: 1rem;
-  animation: border 5s infinite alternate;
   &:hover {
     cursor: pointer;
   }
 }
 
-@keyframes border {
-  0% {
-    border-bottom: 3px solid #2e3539;
-  }
-  20% {
-    border-bottom: 3px solid #6f7077;
-  }
-  40% {
-    border-bottom: 3px solid #f4dbf7;
-  }
-  60% {
-    border-bottom: 3px solid #e07580;
-  }
-  100% {
-    border-bottom: 3px solid #1f2122;
-  }
+.audio-border {
+  border: 1px solid white;
+  color: white;
+  border-radius: 50%;
+  padding: 1rem;
+  background-color: black;
+  opacity: 0.5;
 }
